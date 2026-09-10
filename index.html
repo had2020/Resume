@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadrian Lazic - Systems Software Engineer</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-heading: #f0f6fc;
+            --accent: #58a6ff;
+            --accent-dim: #1f6feb;
+            --font-mono: "JetBrains Mono", "Fira Code", monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            color: var(--text-heading);
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: #79c0ff;
+            text-decoration: underline;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--accent-dim);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .btn-download:hover {
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: var(--text-heading);
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: var(--font-mono);
+        }
+
+        .item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+
+        .item-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+
+        .item-sub {
+            font-size: 0.9rem;
+            color: #8b949e;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category h3 {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            margin-bottom: 0.4rem;
+        }
+
+        .pdf-viewer {
+            margin-top: 2rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            height: 600px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <div>
+                <h1>Hadrian Lazic</h1>
+                <p class="subtitle">Systems & Low-Level Software Engineer</p>
+            </div>
+            <div>
+                <div class="links">
+                    <a href="https://github.com/had2020" target="_blank">GitHub</a>
+                    <a href="https://crates.io/users/had2020" target="_blank">Crates.io</a>
+                    <a href="mailto:your.email@example.com">Email</a>
+                </div>
+                <a href="HadrianLazicResume.pdf" download class="btn-download">↓ Download PDF</a>
+            </div>
+        </header>
+
+        <!-- Technical Skills -->
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <p>Rust, C (C89/C11/C23), Assembly (x86_64, RISC-V), C++, WGSL, Verilog</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Tools</h3>
+                    <p>Linux/FreeBSD, GCC/Clang, GDB, Valgrind, AddressSanitizer, Docker, Neovim</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Architecture</h3>
+                    <p>Cache Optimization, Branchless Logic, SIMD, Bare-Metal Kernels, Fuzzing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Embedded PDF Preview -->
+        <section>
+            <h2>PDF Resume Preview</h2>
+            <div class="pdf-viewer">
+                <iframe src="HadrianLazicResume.pdf" title="Hadrian Lazic Resume PDF"></iframe>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
