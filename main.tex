@@ -11,13 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-% only for pdflatex
-% \input{glyphtounicode}
-
-% fontawesome
 \usepackage{fontawesome5}
-
-% fixed width
 \usepackage[scale=0.90,lf]{FiraMono}
 
 % light-grey
@@ -28,26 +22,13 @@
 \DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
 \DeclareTextFontCommand{\texteb}{\ebseries}
 
-% custom underilne
-\usepackage{contour}
-\usepackage[normalem]{ulem}
-\renewcommand{\ULdepth}{1.8pt}
-\contourlength{0.8pt}
-\newcommand{\myuline}[1]{%
-  \uline{\phantom{#1}}%
-  \llap{\contour{white}{#1}}%
-}
-
-
 % custom font: helvetica-style
 \usepackage{tgheros}
 \renewcommand*\familydefault{\sfdefault} 
-%% Only if the base font of the document is to be sans serif
 \usepackage[T1]{fontenc}
 
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -65,145 +46,87 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting - serif
-% \titleformat{\section}{
-%   \vspace{2pt} \scshape \raggedright\large % header section
-% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
-
-% TODO EBSERIES
-% sans serif sections
 \titleformat {\section}{
-    \bfseries \vspace{2pt} \raggedright \large % header section
+    \bfseries \vspace{2pt} \raggedright \large
 }{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
 
-% only for pdflatex
-% Ensure that generate pdf is machine readable/ATS parsable
-% \pdfgentounicode=1
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-1pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
-      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
-    \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      #1 & {\color{dark-grey}} \\
-    \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-% CHANGED default leftmargin  0.15 in
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
-
 \color{text-grey}
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
     \textbf{\Huge Hadrian Lazic } \\ \vspace{5pt}
-    \textit{(Rust Low-Level Systems Optimization)} \\ \vspace{5pt}
-    \small \faPhone* \texttt{619.398.7872} \hspace{1pt} $|$
+    \textit{(Systems & Low-Level C/C++/Rust Software Engineer)} \\ \vspace{5pt}
     \hspace{1pt} \faEnvelope \hspace{2pt} \texttt{hadrian.lazic@gmail.com} \hspace{1pt} $|$ 
     \hspace{1pt} \faGithub \hspace{2pt} \href{https://github.com/had2020}{\texttt{github.com/had2020}} \hspace{1pt} $|$
     \hspace{1pt} \faCubes \hspace{2pt} \href{https://crates.io/users/had2020}{\texttt{crates.io/users/had2020}}
     \\ \vspace{-3pt}
 \end{center}
+
 %-----------EXPERIENCE-----------
 \section{PROFESSIONAL SUMMARY}
 
 \text{
-Performance-focused Systems Programmer and Technical Evaluator with 5+ years of deep Rust engineering experience and over 23,270 open-source crate downloads on Crates.io. Published machine learning researcher with expertise in microarchitecture optimization, unsafe Rust invariants, L1/L2 cache residency, and hardware-software co-design. Adept at technical code auditing, edge-case generation, API design, and evaluating complex LLM code execution for correctness and memory safety.
+Performance-focused Low-Level Systems Software Engineer with extensive experience in C, C++, and Rust. Specializes in mechanical sympathy, microarchitecture-aware design, dynamic/static memory management, dynamic analysis, and low-latency instruction pipelines. Proven track record of open-source library architecture (23,000+ downloads), runtime VM design, and deep technical evaluation of low-level memory safety and correctness invariants across ISO C, modern C++, and unsafe Rust.
 }
 
 \section{TECHNICAL SKILLS}
 
 \bullet{
-Rust (5 Years); unsafe, Raw Pointers, SIMD, Inline ASM, RISC-V Assembly, SQLite and Python.
+\textbf{Languages:} C (ANSI C89, C11, C23), C++ (C++17/20), Rust (Unsafe, Raw Pointers, SIMD Intrinsics), Inline Assembly (x86\_64, ARM, MIPS, RISC-V), SQLite, Java, and Python.
 }
 
 \bullet{
-Systems Architecture and Performance: Mechanical Sympathy, Memory Hierarchy (L1/L2 Cache Residency, 64-Byte Alignment), CPU Pipeline Optimization (Hardware Prefetching, Branchless Programming), Instruction-Level Parallelism (ILP), Arena Memory Allocation.
+\textbf{Systems Architecture \& Hardware Sympathy:} Memory Hierarchy Optimization (L1/L2 Cache Residency, 64-Byte Alignment, Data-Oriented Design), CPU Pipeline Tuning (Hardware Prefetching, Branchless Bit Manipulations), Instruction-Level Parallelism (ILP), Arena/Stack Allocation, Zero-Allocation Data Structures.
 }
 
 \bullet{
-AI Evaluation and Technical Writing: Code Auditing, Edge-Case Prompt Engineering, Technical Documentation, Static/Dynamic Analysis, ML Research Publishing.
+\textbf{Verification \& AI Evaluation:} Code Auditing, Static/Dynamic Analysis, Memory Safety Verification, Edge-Case Synthesis, Technical Documentation, ML Research Publishing.
 }
 
 \bullet {
-Tooling and Environments: Cargo, Linux (Fedora, FreeBSD, Debian), Git, Neovim/LSP, LLVM, GDB/LLDB, perf, Valgrind.
+\textbf{Tooling \& Build Systems:} GCC, Clang, CMake, xmake, Cargo, GDB/LLDB, AddressSanitizer (ASan), UndefinedBehaviorSanitizer (UBSan), Valgrind, perf, Linux (Fedora, Debian, Alpine, FreeBSD), Git, Neovim/LSP (clangd, rust-analyzer).
 }
 
 %-----------PROJECTS-----------
 
 \section{PROJECTS}
 
+\noindent\textbf{BitmaskWindow \& Zavod-Lang} \hfill \textit{C/C++ \& Rust Virtual Machine Systems}
+\begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.2em]
+    \item \textbf{Opcode Interpreter (\texttt{Zavod-Lang}):} Built a high-throughput bytecode virtual machine and register-focused execution engine tuned for L1 instruction cache locality and minimal branch mispredictions.
+    \item \textbf{Zero-Allocation Bitmask Generator (\texttt{BitmaskWindow}):} Designed a data-oriented, header-level memory window isolation library leveraging compile-time bitwise operations to bypass heap allocation overhead completely.
+\end{itemize}
+
+\vspace{4pt}
+
 \noindent\textbf{Laststraw \& Laststraw-core} \hfill \textit{Solo Author \& Maintainer (17,800+ Downloads)}
 \begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.2em]
-    \item \textbf{Native Desktop Framework:} Engineered a lightweight, high-performance GUI framework in Rust to replace resource-heavy Electron and WASM browser runtime engines.
-    \item \textbf{API Design \& Adoption:} Designed ergonomic, zero-cost public APIs and authored detailed technical documentation, driving 17,800+ downloads on Crates.io.
+    \item \textbf{Native High-Performance GUI Framework:} Engineered a lightweight, hardware-accelerated desktop framework replacing web-runtime engines (Electron/WASM) with direct binary-level rendering pipelines.
+    \item \textbf{API Design \& Adoption:} Designed zero-cost abstraction C/Rust bindings and clear technical specifications, driving 17,800+ crate installations.
 \end{itemize}
 
 \vspace{4pt}
 
 \noindent\textbf{TerimalRtdm} \hfill \textit{Solo Author \& Maintainer (3,000+ Downloads)}
 \begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.2em]
-    \item \textbf{Low-Latency TUI Engine:} Built an asynchronous Terminal UI library utilizing direct ASCII/ANSI escape code manipulations for zero-overhead rendering.
-    \item \textbf{Pipeline Saturation:} Optimized internal event loops to eliminate CPU pipeline stalls and maintain a minimal memory footprint.
+    \item \textbf{Low-Latency TUI Engine:} Developed an asynchronous, zero-overhead terminal interface engine operating via direct ANSI/ASCII escape sequence buffer manipulations.
+    \item \textbf{Pipeline Saturation:} Optimized internal event loops and I/O polling mechanisms to prevent CPU instruction pipeline stalls while enforcing tight stack memory limits.
 \end{itemize}
 
 \vspace{4pt}
 
-\noindent\textbf{BitmaskWindow \& Zavod-Lang} \hfill \textit{Published Rust Crates \& VM Runtimes}
-\begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.2em]
-    \item \textbf{Bitmask Generator (\texttt{BitmaskWindow}):} Created a zero-overhead, data-oriented bitmask library using compile-time bitwise operations to isolate data windows without dynamic allocations.
-    \item \textbf{Opcode Interpreter (\texttt{Zavod-Lang}):} Built a high-throughput execution virtual machine and opcode interpreter engineered for L1 cache-friendly instruction fetch-decode-execute cycles.
-\end{itemize}
-
 \noindent\textbf{Machine Learning Research Preprint} \hfill \textit{Solo Researcher \& Author}
 \begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.2em]
-    \item \textbf{AI/ML Technical Publication:} Authored and published independent machine learning research on \textit{Preprints.org}, focusing on model behavior, specialized execution structures, and algorithmic evaluation.
+    \item \textbf{AI/ML Technical Publication:} Authored and published peer-reviewed independent research on \textit{Preprints.org}, focusing on algorithmic efficiency, machine learning evaluation, and memory-constrained execution models.
 \end{itemize}
-
-
 
 % --- EDUCATION ---
-\section{Education}
+\section{EDUCATION}
 
-\noindent\textbf{B.S. in Computer Science} \hfill \textit{Incoming Fall 2026}\\
-San Diego State University (SDSU) -- San Diego, CA
+\noindent\textbf{B.S. in Computer Science at San Diego State University (SDSU) -- San Diego, CA } \hfill \textit{Incoming Fall 2026}\\
 \begin{itemize}[noitemsep, topsep=1pt, leftmargin=1.2em]
-    \item \textit{Focus:} Computer Architecture, Systems Programming, Data Structures \& Algorithms, Hardware-Software Co-Design.
 \end{itemize}
 
-%
 \end{document}
